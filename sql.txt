@@ -1,0 +1,330 @@
+tasks database
+ use tasks
+switched to db tasks
+>
+> db.tasks.insertMany([{taskid:1,month:'october',submission:'yes',task:'Design database for Zen class programme'},{taskid:2,month:'october',submission:'yes',task:'Design database for guvi users'},{taskid:3,month:'october',submission:'yes',task:'Design database for Zen class codekata'},{taskid:4,month:'october',submission:'yes',task:'Design database for Zen class students drive'}]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("63123bc7799a04c18d14ece8"),
+                ObjectId("63123bc7799a04c18d14ece9"),
+                ObjectId("63123bc7799a04c18d14ecea"),
+                ObjectId("63123bc7799a04c18d14eceb")
+        ]
+}
+> db.tasks.find(month:october).pretty();
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:19
+> db.tasks.find({month:october}).pretty();
+uncaught exception: ReferenceError: october is not defined :
+@(shell):1:16
+1. db.tasks.find({month:'october'}).pretty();
+{
+        "_id" : ObjectId("63123bc7799a04c18d14ece8"),
+        "taskid" : 1,
+        "month" : "october",
+        "submission" : "yes",
+        "task" : "Design database for Zen class programme"
+}
+{
+        "_id" : ObjectId("63123bc7799a04c18d14ece9"),
+        "taskid" : 2,
+        "month" : "october",
+        "submission" : "yes",
+        "task" : "Design database for guvi users"
+}
+{
+        "_id" : ObjectId("63123bc7799a04c18d14ecea"),
+        "taskid" : 3,
+        "month" : "october",
+        "submission" : "yes",
+        "task" : "Design database for Zen class codekata"
+}
+{
+        "_id" : ObjectId("63123bc7799a04c18d14eceb"),
+        "taskid" : 4,
+        "month" : "october",
+        "submission" : "yes",
+        "task" : "Design database for Zen class students drive"
+}
+topics database
+> use topic
+switched to db topic
+> db.topic.insertMany([{id:1,month:'october',topicname:'react'},{id:2,month:'october',topicname:'react hooks'},{id:3,month:'october',topicname:'react states'},{id:4,month:'november',topicname:'react components'},{id:5,month:'october',topicname:'react routing'},{id:6,month:'october',topicname:'react formik'}{id:7,month:'october',topicname:'react useReduce'},{id:8,month:'october',topicname:'react useRef'}]);
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:306
+> db.topic.insertMany([{id:1,month:'october',topicname:'react'},{id:2,month:'october',topicname:'react hooks'},{id:3,month:'october',topicname:'react states'},{id:4,month:'november',topicname:'react components'},{id:5,month:'october',topicname:'react routing'},{id:6,month:'october',topicname:'react formik'},{id:7,month:'october',topicname:'react useReduce'},{id:8,month:'october',topicname:'react useRef'}]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("63123e82799a04c18d14ecec"),
+                ObjectId("63123e82799a04c18d14eced"),
+                ObjectId("63123e82799a04c18d14ecee"),
+                ObjectId("63123e82799a04c18d14ecef"),
+                ObjectId("63123e82799a04c18d14ecf0"),
+                ObjectId("63123e82799a04c18d14ecf1"),
+                ObjectId("63123e82799a04c18d14ecf2"),
+                ObjectId("63123e82799a04c18d14ecf3")
+        ]
+}
+> db.topic.find().pretty();
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecec"),
+        "id" : 1,
+        "month" : "october",
+        "topicname" : "react"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14eced"),
+        "id" : 2,
+        "month" : "october",
+        "topicname" : "react hooks"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecee"),
+        "id" : 3,
+        "month" : "october",
+        "topicname" : "react states"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecef"),
+        "id" : 4,
+        "month" : "november",
+        "topicname" : "react components"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecf0"),
+        "id" : 5,
+        "month" : "october",
+        "topicname" : "react routing"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecf1"),
+        "id" : 6,
+        "month" : "october",
+        "topicname" : "react formik"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecf2"),
+        "id" : 7,
+        "month" : "october",
+        "topicname" : "react useReduce"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecf3"),
+        "id" : 8,
+        "month" : "october",
+        "topicname" : "react useRef"
+}
+> db.topic.find({month:'november'}).pretty();
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecef"),
+        "id" : 4,
+        "month" : "november",
+        "topicname" : "react components"
+}
+1b. db.topic.find({month:'october'}).pretty();
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecec"),
+        "id" : 1,
+        "month" : "october",
+        "topicname" : "react"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14eced"),
+        "id" : 2,
+        "month" : "october",
+        "topicname" : "react hooks"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecee"),
+        "id" : 3,
+        "month" : "october",
+        "topicname" : "react states"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecf0"),
+        "id" : 5,
+        "month" : "october",
+        "topicname" : "react routing"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecf1"),
+        "id" : 6,
+        "month" : "october",
+        "topicname" : "react formik"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecf2"),
+        "id" : 7,
+        "month" : "october",
+        "topicname" : "react useReduce"
+}
+{
+        "_id" : ObjectId("63123e82799a04c18d14ecf3"),
+        "id" : 8,
+        "month" : "october",
+        "topicname" : "react useRef"
+}
+mentores database
+> use mentors
+switched to db mentors
+> db.mentors.insertMany([{mentorid:1,mentorname:'Lavish',noofmentees:20},{mentorid:2,mentorname:'Jagan',noofmentees:15},{mentorid:3,mentorname:'Farroq',noofmentees:15},{mentorid:4,mentorname:'mohammad',noofmentees:13},{mentorid:5,mentorname:'poonam',noofmentees:14},{mentorid:6,mentorname:'neelima',noofmentees:20},{mentorid:7,mentorname:'lakshman',noofmentees:14},{mentorid:8,mentorname:'ram',noofmentees:14}]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("63124172799a04c18d14ecf4"),
+                ObjectId("63124172799a04c18d14ecf5"),
+                ObjectId("63124172799a04c18d14ecf6"),
+                ObjectId("63124172799a04c18d14ecf7"),
+                ObjectId("63124172799a04c18d14ecf8"),
+                ObjectId("63124172799a04c18d14ecf9"),
+                ObjectId("63124172799a04c18d14ecfa"),
+                ObjectId("63124172799a04c18d14ecfb")
+        ]
+}
+> db.mentors.find({noofmentees:{$gt:15}}).pretty();
+{
+        "_id" : ObjectId("63124172799a04c18d14ecf4"),
+        "mentorid" : 1,
+        "mentorname" : "Lavish",
+        "noofmentees" : 20
+}
+{
+        "_id" : ObjectId("63124172799a04c18d14ecf9"),
+        "mentorid" : 6,
+        "mentorname" : "neelima",
+        "noofmentees" : 20
+}
+companydrives database
+> db.company.insertMany([{driveid:1,date:'15thoct',drivesattended: 2},{driveid:2,date: '17thoct',drivesattended:2},{driveid:3,date: '19thoct',drivesattended:2},{driveid:4,date: '20thoct',drivesattended:2},{driveid:5,date: '24thoct',drivesattended:2},{driveid:6,date: '30thoct',drivesattended:2},{driveid:7,date:'1stnov',drivesattended:2},{driveid:8,date: '2ndnov',drivesattended:2}]);
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("631244da799a04c18d14ecfc"),
+                ObjectId("631244da799a04c18d14ecfd"),
+                ObjectId("631244da799a04c18d14ecfe"),
+                ObjectId("631244da799a04c18d14ecff"),
+                ObjectId("631244da799a04c18d14ed00"),
+                ObjectId("631244da799a04c18d14ed01"),
+                ObjectId("631244da799a04c18d14ed02"),
+                ObjectId("631244da799a04c18d14ed03")
+        ]
+}
+> db.company.find({date:{$in:[15thoct,17thoct,19thoct,20thoct,24thoct,30thoct]}})
+uncaught exception: SyntaxError: identifier starts immediately after numeric literal :
+@(shell):1:28
+> db.company.find({date:{$in:['15thoct','17thoct','19thoct','20thoct','24thoct','30thoct']}});
+{ "_id" : ObjectId("631244da799a04c18d14ecfc"), "driveid" : 1, "date" : "15thoct", "drivesattended" : 2 }
+{ "_id" : ObjectId("631244da799a04c18d14ecfd"), "driveid" : 2, "date" : "17thoct", "drivesattended" : 2 }
+{ "_id" : ObjectId("631244da799a04c18d14ecfe"), "driveid" : 3, "date" : "19thoct", "drivesattended" : 2 }
+{ "_id" : ObjectId("631244da799a04c18d14ecff"), "driveid" : 4, "date" : "20thoct", "drivesattended" : 2 }
+{ "_id" : ObjectId("631244da799a04c18d14ed00"), "driveid" : 5, "date" : "24thoct", "drivesattended" : 2 }
+{ "_id" : ObjectId("631244da799a04c18d14ed01"), "driveid" : 6, "date" : "30thoct", "drivesattended" : 2 }
+> db.company.find({date:{$in:['15thoct','17thoct','19thoct','20thoct','24thoct','30thoct']}}).pretty();
+{
+        "_id" : ObjectId("631244da799a04c18d14ecfc"),
+        "driveid" : 1,
+        "date" : "15thoct",
+        "drivesattended" : 2
+}
+{
+        "_id" : ObjectId("631244da799a04c18d14ecfd"),
+        "driveid" : 2,
+        "date" : "17thoct",
+        "drivesattended" : 2
+}
+{
+        "_id" : ObjectId("631244da799a04c18d14ecfe"),
+        "driveid" : 3,
+        "date" : "19thoct",
+        "drivesattended" : 2
+}
+{
+        "_id" : ObjectId("631244da799a04c18d14ecff"),
+        "driveid" : 4,
+        "date" : "20thoct",
+        "drivesattended" : 2
+}
+{
+        "_id" : ObjectId("631244da799a04c18d14ed00"),
+        "driveid" : 5,
+        "date" : "24thoct",
+        "drivesattended" : 2
+}
+{
+        "_id" : ObjectId("631244da799a04c18d14ed01"),
+        "driveid" : 6,
+        "date" : "30thoct",
+        "drivesattended" : 2
+}
+codekata task
+ use codekata
+switched to db codekata
+> db.codekata.insertMany([{codekataid:1,solvedproblems:88},{codekataid:2,solvedproblems:67},{codekataid:3,solvedproblems:60},{codekataid:4,solvedproblems:100},{codekataid:5,solvedproblems:98},{codekataid:6,solvedproblems:80},{codekataid:7,solvedproblems:70},{codekataid:8,solvedproblems:59},{codekataid:9,solvedproblems:95},{codekataid:10,solvedproblems:80},])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("631246b2799a04c18d14ed04"),
+                ObjectId("631246b2799a04c18d14ed05"),
+                ObjectId("631246b2799a04c18d14ed06"),
+                ObjectId("631246b2799a04c18d14ed07"),
+                ObjectId("631246b2799a04c18d14ed08"),
+                ObjectId("631246b2799a04c18d14ed09"),
+                ObjectId("631246b2799a04c18d14ed0a"),
+                ObjectId("631246b2799a04c18d14ed0b"),
+                ObjectId("631246b2799a04c18d14ed0c"),
+                ObjectId("631246b2799a04c18d14ed0d")
+        ]
+}
+> db.codekata.find().pretty();
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed04"),
+        "codekataid" : 1,
+        "solvedproblems" : 88
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed05"),
+        "codekataid" : 2,
+        "solvedproblems" : 67
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed06"),
+        "codekataid" : 3,
+        "solvedproblems" : 60
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed07"),
+        "codekataid" : 4,
+        "solvedproblems" : 100
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed08"),
+        "codekataid" : 5,
+        "solvedproblems" : 98
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed09"),
+        "codekataid" : 6,
+        "solvedproblems" : 80
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed0a"),
+        "codekataid" : 7,
+        "solvedproblems" : 70
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed0b"),
+        "codekataid" : 8,
+        "solvedproblems" : 59
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed0c"),
+        "codekataid" : 9,
+        "solvedproblems" : 95
+}
+{
+        "_id" : ObjectId("631246b2799a04c18d14ed0d"),
+        "codekataid" : 10,
+        "solvedproblems" : 80
+}
